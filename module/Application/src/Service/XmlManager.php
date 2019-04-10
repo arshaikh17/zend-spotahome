@@ -8,10 +8,47 @@ namespace Application\Service;
 
 class XmlManager {
 	
+	CONST URL							 =	"http://feeds.spotahome.com/trovit-Ireland.xml";
+	
+	/**
+	 * Variable for storing url contents
+	 */
+	private $data;
+	
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
+		
+	}
+	
+	/**
+	 * This method fetches data from url
+	 */
+	public function fetchData () {
+		
+		$success						 =	false;
+		$data							 =	file_get_contents(self::URL);
+		 
+		if ($data !== FALSE) {
+			
+			$success					 =	true;
+			
+			$this->setData($data);
+			
+		}
+		
+		return $success;
+		
+	}
+	
+	/**
+	 * This method sets the data
+	 * @param $data
+	 */
+	public function setData ($data) {
+		
+		$this->data						 =	$data;
 		
 	}
 	
