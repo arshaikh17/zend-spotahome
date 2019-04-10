@@ -37,7 +37,7 @@ class XmlManager {
 		
 	}
 	
-		/**
+	/**
 	 * This method maps data to entity model and returns collection
 	 * @return Application\Entity\Advert[] $adverts
 	 */
