@@ -4,6 +4,9 @@ $(document).ready(function () {
 	
 });
 
+/**
+ * This method initialises datatables.
+ */
 function initializeDatatables () {
 	
 	var table							 =	$("#advertTable").DataTable({
