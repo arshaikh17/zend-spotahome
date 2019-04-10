@@ -16,10 +16,11 @@ function initializeDatatables () {
 	$("#download").click(function (e) {
 		
 		e.preventDefault();
-		var data						 =	table.rows().data().toArray();
+		var data						 =	table.data().toArray();
 		var dataArray					 =	[];
 		
 		for (var i in data) {
+			
 			dataArray.push(data[i]);
 		}
 		
@@ -28,7 +29,17 @@ function initializeDatatables () {
 			method						 :	"POST",
 			data						 :	{data : dataArray},
 			success						 :	function (data) {
-				console.log(data)
+				
+				$("<a />", {
+					"download": "data.json",
+					"href" : "data:application/json," + encodeURIComponent(JSON.stringify(data))
+				})
+				.appendTo("body")
+				.click(function() {
+					$(this).remove()
+				})[0]
+				.click()
+				
 			}
 		})
 		

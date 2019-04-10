@@ -35,11 +35,36 @@ class IndexController extends AbstractActionController {
 		
 	}
 	
+	/**
+	 * This method creates and returns a JSON object
+	 * @param JsonModel $data
+	 */
 	public function downloadAction () {
 		
 		$request						 =	$this->getRequest();
+		$rows							 =	$request->getPost()->toArray()["data"];
 		
-		echo "<pre>";print_r($request->getPost());exit();
+		$data							 =	[];
+		
+		foreach ($rows as $row) {
+			
+			$picture					 =	[];
+			preg_match('@src="([^"]+)"@' , $row[3], $picture);
+			
+			$link						 =	[];
+			preg_match('@href="([^"]+)"@' , $row[4], $link);
+			
+			$data[]						 =	[
+				"id"					 =>	$row[0],
+				"title"					 =>	$row[1],
+				"city"					 =>	$row[2],
+				"picture"				 =>	array_pop($picture),
+				"url"					 =>	array_pop($link)
+			];
+			
+		}
+		
+		print_r(json_encode($data));exit();
 		
 	}
 	
