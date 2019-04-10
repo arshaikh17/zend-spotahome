@@ -37,7 +37,6 @@ class IndexController extends AbstractActionController {
 	
 	/**
 	 * This method creates and returns a JSON object
-	 * @param JsonModel $data
 	 */
 	public function downloadAction () {
 		
