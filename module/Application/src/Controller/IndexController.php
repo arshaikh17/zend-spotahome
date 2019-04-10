@@ -35,4 +35,12 @@ class IndexController extends AbstractActionController {
 		
 	}
 	
+	public function downloadAction () {
+		
+		$request						 =	$this->getRequest();
+		
+		echo "<pre>";print_r($request->getPost());exit();
+		
+	}
+	
 }
