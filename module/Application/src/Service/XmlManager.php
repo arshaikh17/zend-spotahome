@@ -52,7 +52,7 @@ class XmlManager {
 			$advert->setID((int) $xmlAdvert->id);
 			$advert->setTitle((string) $xmlAdvert->title);
 			$advert->setUrl((string) $xmlAdvert->url);
-			$advert->setPicture((string) $xmlAdvert->pictures->picture[0]->picture_title);
+			$advert->setPicture((string) $xmlAdvert->pictures->picture[0]->picture_url);
 			$advert->setCity((string) $xmlAdvert->city);
 			$adverts[]					 =	$advert;
 			
