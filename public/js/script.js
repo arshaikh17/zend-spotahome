@@ -36,8 +36,8 @@ function initializeDatatables () {
 				//Create new element with click event binded
 				//And make it to download json file and remove at the end.
 				$("<a />", {
-					"download": "data.json",
-					"href" : "data:application/json," + encodeURIComponent(JSON.stringify(data))
+					"download"			 :	"data.json",
+					"href"				 :	`data:application/json, ${encodeURIComponent(JSON.stringify(data))}`
 				})
 				.appendTo("body")
 				.click(function() {
