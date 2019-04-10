@@ -24,6 +24,7 @@ class XmlManager {
 	
 	/**
 	 * This method fetches data from url
+	  * @return Boolean $success
 	 */
 	public function fetchData () {
 		
