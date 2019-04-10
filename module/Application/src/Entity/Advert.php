@@ -123,4 +123,14 @@ class Advert {
 		
 	}
 	
+	/**
+	 * This method maps data to entity model and returns collection
+	 * @return Application\Entity\Advert[] $adverts
+	 */
+	public function mapEntities ($xml) {
+		
+		return simplexml_load_string($this->getData());
+		
+	}
+	
 }
