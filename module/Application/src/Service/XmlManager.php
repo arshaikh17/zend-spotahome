@@ -53,4 +53,14 @@ class XmlManager {
 		
 	}
 	
+	/**
+	 * This method gets the data
+	 * @return $data
+	 */
+	public function getData () {
+		
+		return $data;
+		
+	}
+	
 }
