@@ -5,6 +5,9 @@
 >
 	<thead>
 		<tr>
+			<th>
+				<input type="checkbox" id="selectAll" class="form-control" />
+			</th>
 			<th>ID</th>
 			<th>Title</th>
 			<th>City</th>
@@ -16,6 +19,13 @@
 <?php	foreach ($adverts as $advert) {
 ?>
 			<tr>
+				<td>
+					<input 
+						type="checkbox" 
+						class="select-advert-row" 
+						data-id="<?= $advert->getID(); ?>" 
+					/>
+				</td>
 				<td><?= $advert->getID(); ?></td>
 				<td><?= $advert->getTitle(); ?></td>
 				<td><?= $advert->getCity(); ?></td>

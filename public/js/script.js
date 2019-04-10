@@ -6,7 +6,12 @@ $(document).ready(function () {
 
 function initializeDatatables () {
 	
-	$("#advertTable").DataTable();
+	$("#advertTable").DataTable({
+		columnDefs						 :	[{
+			"targets"					 :	[0, 4, 5],
+			"orderable"					 :	false,
+		}]
+	});
 	
 }
 
