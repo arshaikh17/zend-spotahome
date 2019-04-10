@@ -11,11 +11,6 @@ class XmlManager {
 	CONST URL							 =	"http://feeds.spotahome.com/trovit-Ireland.xml";
 	
 	/**
-	 * Variable for storing url contents
-	 */
-	private $data;
-	
-	/**
 	 * Constructor
 	 */
 	public function __construct() {
@@ -28,38 +23,15 @@ class XmlManager {
 	 */
 	public function fetchData () {
 		
-		$success						 =	false;
+		$success						 =	true;
 		$data							 =	file_get_contents(self::URL);
-		 
-		if ($data !== FALSE) {
-			
-			$success					 =	true;
-			
-			$this->setData($data);
-			
-		}
 		
-		return $success;
+		if ($data === FALSE) $success	 =	false;
 		
-	}
-	
-	/**
-	 * This method sets the data
-	 * @param $data
-	 */
-	public function setData ($data) {
-		
-		$this->data						 =	$data;
-		
-	}
-	
-	/**
-	 * This method gets the data
-	 * @return $data
-	 */
-	public function getData () {
-		
-		return $data;
+		return [
+			"success"					 =>	$success,
+			"data"						 =>	simplexml_load_string($data)
+		];
 		
 	}
 	
