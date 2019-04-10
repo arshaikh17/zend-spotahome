@@ -30,6 +30,8 @@ function initializeDatatables () {
 			data						 :	{data : dataArray},
 			success						 :	function (data) {
 				
+				//Create new element with click event binded
+				//And make it to download json file and remove at the end.
 				$("<a />", {
 					"download": "data.json",
 					"href" : "data:application/json," + encodeURIComponent(JSON.stringify(data))
@@ -38,7 +40,7 @@ function initializeDatatables () {
 				.click(function() {
 					$(this).remove()
 				})[0]
-				.click()
+				.click();
 				
 			}
 		})

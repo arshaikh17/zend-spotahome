@@ -48,6 +48,7 @@ class IndexController extends AbstractActionController {
 		
 		foreach ($rows as $row) {
 			
+			//Regex to filter out attribute values.
 			$picture					 =	[];
 			preg_match('@src="([^"]+)"@' , $row[3], $picture);
 			
