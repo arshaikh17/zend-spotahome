@@ -19,7 +19,7 @@ function initializeDatatables () {
 	$("#download").click(function (e) {
 		
 		e.preventDefault();
-		var data						 =	table.data().toArray();
+		var data						 =	table.rows().data().toArray();
 		var dataArray					 =	[];
 		
 		for (var i in data) {
